@@ -1,4 +1,4 @@
-package dynamique;
+package pack2;
 
 public class Test {
 
@@ -9,19 +9,8 @@ public class Test {
         this.x = x;
     }
 
-    public Test(){
-
-        x = 0;
-    }
-
     public int getX(){
 
         return x;
     }
-
-    protected void setX(int x){
-
-        this.x = x;
-    }
-
 }

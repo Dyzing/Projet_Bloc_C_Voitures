@@ -1,5 +1,6 @@
 package dynamique;
 
+import pack.StringSource;
 import javax.tools.JavaFileObject;
 
 public class TestFactory {

@@ -15,6 +15,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
+
+        /*
         // ******** ETAPE #1 : Préparation pour la compilation
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         List<ByteArrayClass> classes = new ArrayList<>();           // pour mettre les .class   (IMPORTANT)
@@ -90,5 +94,8 @@ public class Main {
             System.out.println("CLASSE : " + t.getClass());
             System.out.println("X : " + t.getX());
         }
+
+        */
+
     }
 }
