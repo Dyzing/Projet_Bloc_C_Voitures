@@ -16,6 +16,7 @@ public class Main {
         List<Voiture> mesVoitures = new ArrayList<Voiture>();
         ajoutVoituresInstanciation(mesVoitures);
         ajoutVoituresReflexion(mesVoitures);
+        ajoutVoituresMeta(mesVoitures);
 
         try {
             int x = 0;
@@ -54,6 +55,18 @@ public class Main {
 
         mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
                 REFLEXION,false, 10));
+    }
+
+    private static void ajoutVoituresMeta(List<Voiture> mesVoitures) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+
+        mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
+                META, true, 0));
+
+        mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
+                META,false, 50));
+
+        mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
+                META,true, 10));
     }
 
     private static void surveillerVoiture(Voiture v) throws Exception {
