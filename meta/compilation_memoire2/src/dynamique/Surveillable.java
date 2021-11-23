@@ -2,6 +2,6 @@ package dynamique;
 
 public interface Surveillable {
 
-    public int surveiller();
+    public int surveiller(int limitevitesse);
 
 }

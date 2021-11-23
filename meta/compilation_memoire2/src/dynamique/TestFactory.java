@@ -1,10 +1,11 @@
 package dynamique;
 
-import pack.StringSource;
+//import pack.StringSource;
 import javax.tools.JavaFileObject;
 
 public class TestFactory {
 
+    /*
     public static JavaFileObject buildSource(String nomClasse) {
 
         int x = (int)(Math.random() * 1000);
@@ -37,5 +38,5 @@ public class TestFactory {
     private static void genererAttributs(StringBuilder sb) {
 
         sb.append("private int y;\n");
-    }
+    } */
 }
