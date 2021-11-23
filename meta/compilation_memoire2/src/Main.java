@@ -11,10 +11,11 @@ import dynamique.Voiture;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
         List<Voiture> mesVoitures = new ArrayList<Voiture>();
         ajoutVoituresInstanciation(mesVoitures);
+        ajoutVoituresReflexion(mesVoitures);
 
         try {
             int x = 0;
@@ -31,7 +32,7 @@ public class Main {
 
 
 
-    private static void ajoutVoituresInstanciation(List<Voiture> mesVoitures) {
+    private static void ajoutVoituresInstanciation(List<Voiture> mesVoitures) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
         mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
                 INSTANCIATION, true, 0));
@@ -41,6 +42,18 @@ public class Main {
 
         mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
                 INSTANCIATION,false, 10));
+    }
+
+    private static void ajoutVoituresReflexion(List<Voiture> mesVoitures) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+
+        mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
+                REFLEXION, true, 0));
+
+        mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
+                REFLEXION,false, 50));
+
+        mesVoitures.add(VoitureFactory.buildVoiture(VoitureFactory.ModeConstruction.
+                REFLEXION,false, 10));
     }
 
     private static void surveillerVoiture(Voiture v) throws Exception {
