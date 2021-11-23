@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/reflexion/Appel/Appel.iml" filepath="$PROJECT_DIR$/reflexion/Appel/Appel.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Projet_Bloc_C_Voitures.iml" filepath="$PROJECT_DIR$/.idea/Projet_Bloc_C_Voitures.iml" />
       <module fileurl="file://$PROJECT_DIR$/reflexion/analyse/analyse.iml" filepath="$PROJECT_DIR$/reflexion/analyse/analyse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/meta/compilation_fichier2/compilation_fichier2.iml" filepath="$PROJECT_DIR$/meta/compilation_fichier2/compilation_fichier2.iml" />
       <module fileurl="file://$PROJECT_DIR$/meta/compilation_memoire2/compilation_memoire2.iml" filepath="$PROJECT_DIR$/meta/compilation_memoire2/compilation_memoire2.iml" />
     </modules>
   </component>
