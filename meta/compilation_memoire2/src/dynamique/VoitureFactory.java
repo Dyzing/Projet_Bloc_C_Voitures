@@ -7,48 +7,44 @@ public class VoitureFactory {
     public enum ModeConstruction {INSTANCIATION, REFLEXION, META}
 
     public static Voiture buildVoiture(ModeConstruction mode, boolean sport,int vitesse) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        try {
+            if (mode == ModeConstruction.INSTANCIATION) {
+                System.out.println("INSTANCIATION");
+                //INSTACIATION
+                if (sport) {
 
-        if (mode == ModeConstruction.INSTANCIATION) {
-            System.out.println("INSTANCIATION");
-            //INSTACIATION
-            if (sport){
+                    MetaVoitureSport voituresport = new MetaVoitureSport();
+                    return voituresport;
 
-                MetaVoitureSport voituresport = new MetaVoitureSport();
-                return voituresport;
+                } else {
+
+                    MetaVoiture voiture = new MetaVoiture(vitesse);
+                    return voiture;
+
+                }
+
+
+            } else if (mode == ModeConstruction.REFLEXION) {
+                System.out.println("REFLEXION");
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Nom de la Classe > ");
+                String nomClasse = sc.next();
+
+                //REFLEXION
+                if (sport) {
+
+                    Class maClasse = Class.forName(nomClasse);
+                    Object o1 = maClasse.getDeclaredConstructor().newInstance();
+                    return (MetaVoitureSport) o1;
+
+                } else {
+
+                    Class maClasse = Class.forName(nomClasse);
+                    Object o2 = maClasse.getDeclaredConstructor(int.class).newInstance(vitesse);
+                    return (MetaVoiture) o2;
+                }
 
             }
-            else{
-
-                MetaVoiture voiture = new MetaVoiture(vitesse);
-                return voiture;
-
-            }
-
-
-        }
-
-        else if (mode == ModeConstruction.REFLEXION) {
-            System.out.println("REFLEXION");
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Nom de la Classe > ");
-            String nomClasse = sc.next();
-
-            //REFLEXION
-            if (sport){
-
-                Class maClasse = Class.forName(nomClasse);
-                Object o1 = maClasse.getDeclaredConstructor().newInstance();
-                return (MetaVoitureSport)o1;
-
-            }
-            else{
-
-                Class maClasse = Class.forName(nomClasse);
-                Object o2 = maClasse.getDeclaredConstructor(int.class).newInstance(vitesse);
-                return (MetaVoiture)o2;
-            }
-
-        }
 
         /*else if (mode == ModeConstruction.META){
 
@@ -56,14 +52,17 @@ public class VoitureFactory {
 
         }
 */
-        else{
-            Voiture voiture2 = new Voiture(vitesse);
-            return voiture2;
+            else {
+                Voiture voiture2 = new Voiture(vitesse);
+                return voiture2;
+            }
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+            System.out.println("*** CLASSE NON TROUVEE ***");
         }
-
-
+        Voiture voiture2 = new Voiture(vitesse);
+        return voiture2;
     }
-
 
 
 }
