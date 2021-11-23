@@ -24,14 +24,11 @@ public class VoitureFactory {
 
 
             } else if (mode == ModeConstruction.REFLEXION) {
-                Scanner sc = new Scanner(System.in);
-                System.out.print("Nom de la Classe > ");
-                String nomClasse = sc.next();
 
                 //REFLEXION
                 if (sport) {
 
-                    Class maClasse = Class.forName(nomClasse);
+                    Class maClasse = Class.forName("dynamique.MetaVoitureSport");
                     Object o1 = maClasse.getDeclaredConstructor().newInstance();
 
                     Constructor[] constructeurs = maClasse.getDeclaredConstructors();
@@ -65,7 +62,7 @@ public class VoitureFactory {
 
                 } else {
 
-                    Class maClasse = Class.forName(nomClasse);
+                    Class maClasse = Class.forName("dynamique.MetaVoiture");
                     Object o2 = maClasse.getDeclaredConstructor(int.class).newInstance(vitesse);
 
                     Constructor[] constructeurs = maClasse.getDeclaredConstructors();
@@ -93,7 +90,7 @@ public class VoitureFactory {
                         System.out.println("Attributs : " + attr.toString());
                     }
 
-                    System.out.println("-------------------------------------------------------------");    
+                    System.out.println("-------------------------------------------------------------");
 
                     return (MetaVoiture) o2;
                 }
